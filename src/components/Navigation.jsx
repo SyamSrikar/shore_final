@@ -411,7 +411,7 @@ const [isSelect,setSelected]=useState(false)
 
   return (
     <>
-      <div className='close_team' onClick={()=>{props.state(false)}}><IoCloseCircleOutline size={'30px'}/></div>
+      { !isMenu && <div className='close_team' onClick={()=>{props.state(false)}}><IoCloseCircleOutline size={'30px'}/></div>}
       <div className={props.value?'navigation-mobile':'navigation-desktop'}>
         {props.value &&<div className='check'>
             {!isSelect?
