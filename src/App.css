@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital@1&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+} 
+
+html, body{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.question{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.answer{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+}
+
+
+.heading{
+  text-align: center;
+  justify-content: center;
+  font-size:50px;
+  color:white;
+  font-family: 'Sofia Sans Semi Condensed', sans-serif;
+  font-weight: 400;
+}
+.footer-heading{
+  text-align: center;
+  justify-content: center;
+  font-size:30px;
+  color:white;
+  font-family: 'Sofia Sans Semi Condensed', sans-serif;
+  font-weight: 200;
+}
+.footer-link{
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+.footer-addr{
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+.circle-container {
+  position: relative; 
+  width: 1000px;
+  height: 720px;
+  padding: 20px;
+}
+
+.theme{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.circle-container div {
+  display: block;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  width: 220px;
+  /* height: 250px; */
+  margin: -10px;
+}
+  .circle-container img {
+    display: block;
+    width: 100%;
+  }
+ 
+  .deg45 {
+    transform: rotate(45deg) translate(300px) rotate(-45deg);
+  } 
+ 
+  .deg135 {
+    transform: rotate(135deg) translate(300px) rotate(-135deg);
+  }
+ 
+  .deg225 {
+    transform: rotate(199deg) translate(300px) rotate(-199deg);
+  }
+
+  .deg270 {
+    transform: rotate(270deg) translate(300px) rotate(90deg);
+  }
+  .deg315 {
+    transform: rotate(340deg) translate(300px) rotate(-340deg);
+  }
+
+.circle-container-mobile img{
+  width: 160px; 
+}
+.img1{
+  padding-top: 90px;
+}
+.img2{
+  padding-bottom: 90px;
+}
+ 
