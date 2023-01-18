@@ -5,7 +5,8 @@ import '../App.css';
 
 const Faq =(props) => {
   return (
-        <Flex padding={'50px'} flexDir={'column'} width={'100%'} height={'100%'} backgroundColor={'black'} marginTop={'50px'}>
+        <Flex padding={'50px'} flexDir={'column'} width={'100%'} height={'100%'} backgroundColor={'#020710'} >
+              <Flex marginTop={props.value?'20px':'50px'} padding={'15px 0px'} marginBottom={'50px'} justifyContent={'center'} alignItems={'center'}><button class="glow-on-hover" type="button" onClick={()=>{ props.state(true)} }>MEET THE TEAM !!!</button></Flex>
               <Flex className='heading'><p>FAQ'S</p></Flex>
               <Flex flexGrow={'1'} flexDir={'column'} alignItems={'center'}> 
                 <Flex  minW={props.value?'100%':'50%'} maxW={props.value?'100%':'50%'} marginTop={'40px'} flexDir={'column'} marginBottom={'30px'}>

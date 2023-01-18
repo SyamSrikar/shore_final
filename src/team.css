@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
+
+
+p{
+  color: white;
+}
+
+.close_team{
+    position: fixed;
+    top: 2.5%;
+    right: 7%;
+    color: white;
+    cursor: pointer;
+    z-index: 105;
+}
+
+.navigation-desktop{
+  display: flex;
+  flex-direction: row;
+  max-width: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.navigation-links-desktop{
+  border: 2px solid white;
+  border-radius: 0px 10px 10px 0px;
+  max-width:15%;
+  flex-direction: column;
+  height: fit-content;
+  align-items: center;
+  margin: 3% 0% 0% 0%;
+  border-left: #020710;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+}
+
+.navigation-links-desktop a {
+  display: block;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 15px 6px 15px 6px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+
+.navigation-links-desktop a:first-child{
+  border-top-right-radius: 9px;
+}
+.navigation-links-desktop a:last-child{
+  border-bottom-right-radius: 9px;
+  margin-bottom: 0px;
+}
+
+
+.navigation-links-desktop{
+  cursor: pointer;
+}
+
+.active-parent{ 
+  font-weight: 700;
+}
+.inactive{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+}
+
+.profile_section{
+  display: flex;
+  justify-content:space-around ;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+  flex-basis: 0 0 33.333333%;
+}
+.profiles{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  max-width: 83%;
+  width: 83%;
+  z-index:100
+}
+
+.profile_detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.profile_detail img{
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+.heading_title{
+  margin: 30px 0px 30px 0px;
+  font-size: 30px;
+}
+
+.spacer{
+  max-width: 15%;
+  width: 15%;
+}
+.wrapper {
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+.profile_detail p{
+  line-height: 20px;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 62.5px;
+  width: 179px;
+  height: 179px;
+  background: linear-gradient(90deg, #FF8038 0%, #FF0099 30.43%, #00EBEB 68.23%, #DB00FF 100%);
+  background-size: 600% 600%;
+  border-radius: 50%;
+  animation: AnimateBorder 4s ease infinite;
+  -webkit-animation: AnimateBorder 4s ease infinite;
+  -moz-animation: AnimateBorder 4s ease infinite;
+  z-index: -1;
+  transform: translate(-2px, -2px);
+  transition: filter 1s ease-in;
+}
+
+.wrapper:hover .bg {
+  filter: blur(10px);
+  transition: filter .4s ease-in;
+}
+
+
+@-webkit-keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+.navigation-mobile{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.navigation-mobile{
+  margin-top: 30px;
+  height: 100vh;
+}
+
+.navigation-mobile .profiles{
+  position: absolute;
+  top:60px;
+  max-width:100vw ;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.check{
+  display: block;
+  position: absolute;
+  left: 7%;
+  top:3%;
+  cursor: pointer;
+  size: 15px;
+}
+
+.navigation-links-mobile a{
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  padding: 15px 6px 15px 6px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.navigation-links-mobile{
+  left: 0%;
+  transition: all 0.3s ease-in-out;
+  background-color: #020710;
+  border-bottom: 2px solid black;
+  z-index: 100;
+  width: 100vw;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+.active{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  width: 100%;
+  font-family: 'Bitter', serif;
+  font-weight: 500;
+  margin-top: 3%;
+  
+}
+
+.name{
+  font-size: 20px;
+  font-weight: 600;
+}

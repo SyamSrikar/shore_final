@@ -1,13 +1,15 @@
 import React from 'react';
-import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import Themes from './components/Themes';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Navigation from './components/Navigation';
 
 function App() {
+
+  const [click,setClick]=useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
   function handleWindowSizeChange() {
@@ -25,11 +27,14 @@ useEffect(() => {
 }, [width])
 
   return (
-    <ChakraProvider>
+    !click ?<>
+      <ChakraProvider>
       <Themes value={isMobile}/>
-      <Faq value={isMobile}/>
+      <Faq value={isMobile} state={setClick}/>
       <Footer value={isMobile}/>
     </ChakraProvider>
+    </>:<Navigation value={isMobile} state={setClick}/>
+    
   );
 }
 

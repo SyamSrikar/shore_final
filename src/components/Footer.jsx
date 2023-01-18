@@ -1,11 +1,11 @@
 import React from 'react'
 import {Flex} from '@chakra-ui/react'; 
-
+import '../App.css';
 
 const Footer = (props) => {
   const link_style={justifyContent:'space-between' ,marginTop:'30px' ,alignItems:'center',fontSize:'25px',cursor:'pointer' ,width:'155px'};
   return (
-    <Flex backgroundColor={'black'} padding={'40px'} paddingTop={'0px'} color={'white'} flexWrap={'wrap'} justifyContent={'space-around'}> 
+    <Flex backgroundColor={'#020710'} padding={'40px'} paddingTop={'0px'} color={'white'} flexWrap={'wrap'} justifyContent={'space-around'}> 
         <Flex height={'250px'} marginBottom={props.value?'50px':'20px'}> <img src='../images/logo.png' alt='LOGO'></img> </Flex>
         <Flex flexDir={'column'} justifyContent={'flex-start'} marginBottom={props.value?'50px':'0px'}  >
             <p className='footer-heading' ><b>Visakhapatnam Campus</b></p>
