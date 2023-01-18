@@ -21,7 +21,7 @@ function App() {
   }, []);
 const [isMobile,setIsMobile]=useState(false)
 useEffect(() => {
-  setIsMobile(width<768);
+  setIsMobile(width<=768);
 }, [width])
 
   return (
