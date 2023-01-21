@@ -16,7 +16,10 @@ function About(props) {
             <p className='model-desc'>SHORe 2023 is a culmination of years of preparation, passion and ambition of GITAM to celebrate a festival that features both athletic and artistic pursuits. These go beyond anything we could have imagined. The team envisions making it an absolute trailblazer of an event!
 The Serenity of Vizag beaches and the essence of GITAM's campus life can be captured with the word "Shore".
 SHORe, when said out loud, is a homonym of "शोर" in Hindi, which defines our tagline as "Sound of Joy".. 
-  <br></br><br></br><span className='dates'><Flex alignItems={'center'}><BsCalendar2Week/></Flex><Flex marginLeft={'15px'}><div>3<sup>rd</sup>, 4<sup>th</sup>, 5<sup>th</sup> February 2023</div></Flex></span></p>
+  <br></br><br></br><span className='dates'><Flex>
+  <Flex alignItems={'center'}><BsCalendar2Week/></Flex>
+  <Flex marginLeft={'15px'}><div className={props.value?'date-mobile':'date-desktop'}>3<sup>rd</sup>, 4<sup>th</sup>, 5<sup>th</sup> February 2023</div></Flex>
+  </Flex></span></p>
 </div></div>
     </div>
 

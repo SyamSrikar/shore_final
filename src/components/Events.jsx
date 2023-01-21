@@ -158,15 +158,16 @@ const Events=(props)=> {
  const [tab,setTab]=useState(true)
   return (
     <>
-        <Flex flexDir={'column'} paddingX={props.value?'0px':'50px'} marginTop={'100px'} width={'100%'}>
-            <Flex margin={'10px 0px'} justifyContent={'center'} width={'100%'}><p className='heading'>EVENTS</p></Flex>
-            <Flex justifyContent={'flex-start'} marginTop={'50px'} width={'100%'}>
-                <div className={tab?'tab tabselect':'tab'} onClick={()=>setTab(!tab)}>Major Events</div>
+        <Flex flexDir={'column'} paddingX={props.value?'0px':'50px'} marginTop={'40px'} width={'100%'}  > 
+            <Flex margin={'10px 0px'} justifyContent={'center'} width={'100%'} className='heading'><p>EVENTS</p></Flex>
+            <Flex justifyContent={'flex-start'} marginTop={props.value?'15px':'20px'} position={'relative'}  width={'240px'} cursor={'pointer'} marginLeft={'40px'}>
+                <div className={tab?'tab tabselect':'tab'} onClick={()=>setTab(!tab)} >Major Events</div>
                 <div className={tab?'tab':'tab tabselect'} onClick={()=>setTab(!tab)}>Minor Events</div>
             </Flex>
-            <Flex>
-              <div width={"100%"}>
-                ({tab&&<EventsCarousel value={eventListMajor} device={props.value} />}||{!tab && <EventsCarousel value={eventListMinor} device={props.value}/>})
+            <Flex >   
+              <div width={"100%"} >
+                {tab&&<EventsCarousel value={eventListMajor} device={props.value}/>}
+                 {!tab && <EventsCarousel value={eventListMinor} device={props.value}/>}
                 </div>
             </Flex>
         </Flex>
