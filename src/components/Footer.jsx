@@ -16,8 +16,7 @@ const Footer = (props) => {
                 Andhra Pradesh,India
               </p>
             <br></br>
-            <p className='footer-addr'>0891-2840501</p>
-            <a href='mailto:registrar@gitam.edu' className='footer-addr'>registrar@gitam.edu</a>
+            <a href='mailto:registrar@gitam.edu' className='footer-addr'>unifest_cc@gitam.in</a>
             
         </Flex>
         <Flex flexDir={'column'}  justifyContent={'flex-start'} marginBottom={props.value?'80px':'0px'} >
@@ -31,7 +30,7 @@ const Footer = (props) => {
                   <img src='../images/facebook.png' width={'35px'} height={'35px'}></img>
                   <p className='footer-link'>Facebook</p>
                 </Flex>
-                <Flex style={link_style} onClick={()=>window.location.href = "#"}>
+                <Flex style={link_style} onClick={()=>window.location.href = "https://www.linkedin.com/company/shore-gitam-deemed-to-be-university/"}>
                   <img src='../images/linkedin.png' width={'35px'} height={'35px'}></img>
                   <p className='footer-link'>LinkedIn</p>
                 </Flex>

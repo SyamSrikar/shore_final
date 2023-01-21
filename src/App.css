@@ -78,7 +78,7 @@ html,body{
 
 .model {
   position: relative;
-  top: 20%;
+  top: 10%;
   left: 4%;
   z-index: 1050;
   width: 45%;
@@ -92,7 +92,7 @@ html,body{
   z-index: 1050;
   overflow: hidden;
   outline: 0;
-  padding: 80px 30px;
+  padding: 50px 30px;
   height: 100vh;
 }
 
@@ -122,6 +122,8 @@ html,body{
     font-weight: 600;
     margin-top: 30px;
 }
+.dates{text-align:'center';font-size:'30px';font-weight:700;display:'flex'}
+
 
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {

@@ -35,6 +35,7 @@ useEffect(() => {
       <Home/>
       <About value={isMobile}/>
       <Themes value={isMobile}/>
+      <Events value={isMobile}/>
       <Faq value={isMobile} state={setClick}/>
       <Footer value={isMobile}/>
     </ChakraProvider>

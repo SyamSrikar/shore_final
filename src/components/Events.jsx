@@ -3,6 +3,8 @@ import '../events.css';
 import {Flex} from '@chakra-ui/react';
 import { useState } from 'react';
 import EventsCarousel from './EventsCarousel';
+import EventsGallery from './EventsGallery';
+import { propTypes } from 'react-grid-carousel';
 
 
 const eventListMajor = [
@@ -73,25 +75,10 @@ const eventListMajor = [
   ]
   
   const eventListMinor = [
-    {
-      name: "Solo Dance",
-      desc: "The solo dance competition is for all those main characters out ther.This is a great opportunity to showcase your skill and talent. The competition will help you build confidence, gain experience, meet other dancers, and develop your own skill.",
-      date: "27 Jan 2023",
-      time: "1000 to 1200hrs",
-      venue: "Mother Teresa Auditorium",
-      img: "./events/solo_dance.JPG"
-    },
-    {
-      name: "Duet Dance",
-      desc: "The Duet Dance competition is open to all kinds of pairs regardless of gender. The competition allows all types of dance and genres of music; the only rule is to have a partner. The synchronization and partnership between the dancers is one of the main criterion for judgement.",
-      date: "28 Jan 2023",
-      time: "1000 to 1200hrs",
-      venue: "Mother Teresa Auditorium",
-      img: "./events/duet_dance.JPG"
-    },
+
     {
       name: "Dance Battle",
-      desc: "Dance battles are competitions where two individuals or groups compete against each other. The participants have to dance to random songs played by the moderator and the winner is judged based on the crowd's reaction or opinion coupled with the judges scoring. The dance battle competition will be conducted in three rounds, wherein a different song is played in each round, and the winner is decided by best of three. There are no rules or limitations on the type of style which can be performed; individuals are expected to show their talent and natural style.",
+      desc: "Dance battles are competitions where two individuals or groups compete against each other. The participants have to dance to random songs played by the moderator and the winner is judged based on the crowd's reaction or opinion coupled with the judges scoring. The dance battle competition will be conducted in three rounds, wherein a different song is played in each round, and the winner is decided by best of three. There are no rules or limitations on the type of style which can be performed.",
       date: "27 Jan 2023",
       time: "1400 to 1600hrs",
       venue: "Open Auditorium",
@@ -111,7 +98,7 @@ const eventListMajor = [
       date: "27 Jan 2023",
       time: "1300 to 1400hrs",
       venue: "KRC Auditorium",
-      img: "./events/mime_act.png"
+      img: "./events/mime_act.jpg"
     },
     {
       name: "Acapella",
@@ -129,14 +116,7 @@ const eventListMajor = [
       venue: "KRC Auditorium",
       img: "./events/solo_sing.JPG"
     },
-    {
-      name: "Face Paint",
-      desc: "Participants must be a pair consisting of an artist and a model. The artist must paint the model’s face according to the given theme. Along with paints, the artist may also use some special decorative items.",
-      date: "28 Jan 2023",
-      time: "1100 to 1200hrs",
-      venue: "GSB Seminar Hall",
-      img: "./events/face_paint.jpg"
-    },
+
     {
       name: "Poetry",
       desc: "Poetry is a type of writing that brings a thought, and defines a scene or tells a story in an intensive, lyrical arrangement of words. Poems are often of different lengths, use different tenses, and, most importantly, express different ideas through often strange yet reasonable ways. The participants of this competition must recite their self-written poetry/Shayari.",
@@ -161,14 +141,7 @@ const eventListMajor = [
       venue: "Open Auditorium",
       img: "./events/split_screen.JPG"
     },
-    {
-      name: "Rap Battle",
-      desc: "Battle rap (also known as rap battling) is a type of rapping performed between two or more performers that incorporate boasts and wordplay. Battle rap is often performed or freestyled spontaneously in live battles. Rap is the epitome of musical amalgamation, which combines poetry and beats that literally portray the artist's emotions. The Rap Battle ensures to set the stage on fire.",
-      date: "28 Jan 2023",
-      time: "1730 to 1830hrs",
-      venue: "Main Stage",
-      img: "./events/rap_battle.JPG"
-    },
+
     {
       name: "JAM - Just A Minute",
       desc: "Participants have to speak on the given topic for a minute, and if they make any mistakes or pause during their turn, they can be interrupted by the other participants, who will then have another minute to speak on.",
@@ -180,20 +153,20 @@ const eventListMajor = [
   ]
   
 
-function Events() {
+const Events=(props)=> {
 
- const [tab,setTab]=useState('tab1')
+ const [tab,setTab]=useState(true)
   return (
     <>
-        <Flex flexDir={'column'} paddingX={'50px'} marginTop={'100px'} width={'100%'}>
+        <Flex flexDir={'column'} paddingX={props.value?'0px':'50px'} marginTop={'100px'} width={'100%'}>
             <Flex margin={'10px 0px'} justifyContent={'center'} width={'100%'}><p className='heading'>EVENTS</p></Flex>
             <Flex justifyContent={'flex-start'} marginTop={'50px'} width={'100%'}>
-                <div className={tab==='tab1'?'tab tabselect':'tab tab1'} onClick={()=>setTab('tab1')}>Major Events</div>
-                <div className={tab==='tab2'?'tab tabselect':'tab tab2'} onClick={()=>setTab('tab2')}>Minor Events</div>
+                <div className={tab?'tab tabselect':'tab'} onClick={()=>setTab(!tab)}>Major Events</div>
+                <div className={tab?'tab':'tab tabselect'} onClick={()=>setTab(!tab)}>Minor Events</div>
             </Flex>
             <Flex>
               <div width={"100%"}>
-                {tab==='tab1'?<EventsCarousel value={eventListMajor} />:<EventsCarousel value={eventListMinor}/>}
+                ({tab&&<EventsCarousel value={eventListMajor} device={props.value} />}||{!tab && <EventsCarousel value={eventListMinor} device={props.value}/>})
                 </div>
             </Flex>
         </Flex>
