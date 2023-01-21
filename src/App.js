@@ -6,6 +6,9 @@ import Themes from './components/Themes';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Navigation from './components/Navigation';
+import Events from './components/Events';
+import Home from './components/Home';
+import About from './components/About';
 
 function App() {
 
@@ -29,6 +32,8 @@ useEffect(() => {
   return (
     !click ?<>
       <ChakraProvider>
+      <Home/>
+      <About value={isMobile}/>
       <Themes value={isMobile}/>
       <Faq value={isMobile} state={setClick}/>
       <Footer value={isMobile}/>

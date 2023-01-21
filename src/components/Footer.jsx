@@ -6,7 +6,7 @@ const Footer = (props) => {
   const link_style={justifyContent:'space-between' ,marginTop:'30px' ,alignItems:'center',fontSize:'25px',cursor:'pointer' ,width:'155px'};
   return (
     <Flex backgroundColor={'#020710'} padding={'40px'} paddingTop={'0px'} color={'white'} flexWrap={'wrap'} justifyContent={'space-around'}> 
-        <Flex height={'250px'} marginBottom={props.value?'50px':'20px'}> <img src='../images/logo.png' alt='LOGO'></img> </Flex>
+        {!props.value && <Flex height={'250px'} marginBottom={props.value?'50px':'20px'}> <img src='../images/logo.png' alt='LOGO'></img> </Flex>}
         <Flex flexDir={'column'} justifyContent={'flex-start'} marginBottom={props.value?'50px':'0px'}  >
             <p className='footer-heading' ><b>Visakhapatnam Campus</b></p>
             <br></br>
@@ -37,6 +37,7 @@ const Footer = (props) => {
                 </Flex>
              </Flex>
         </Flex>
+        {props.value && <Flex height={'250px'} marginBottom={props.value?'50px':'20px'}> <img src='../images/logo.png' alt='LOGO'></img> </Flex>}
     </Flex>
   )
 }

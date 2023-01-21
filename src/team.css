@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
 
+body{
+  background-color: #020710!important;
+}
+
 
 p{
   color: white;
@@ -36,6 +40,7 @@ p{
   width: 15%;
   position: fixed;
   z-index: 1;
+  color: white;
 }
 
 .navigation-links-desktop a {
@@ -122,9 +127,10 @@ p{
   justify-content: center;
   width: 100%;
   align-items: center;
+  margin-bottom: 15px;
 }
 .profile_detail p{
-  line-height: 20px;
+  line-height: 10px;
 }
 
 .bg {
@@ -171,6 +177,7 @@ p{
   display: flex;
   flex-direction: column;
   width: 100vw;
+  background-color: #020710;
 }
 
 .navigation-mobile{
@@ -218,6 +225,7 @@ p{
   border-bottom-left-radius: 20px;
   margin-top: 60px;
   cursor: pointer;
+  color: white;
 }
 
 .active{

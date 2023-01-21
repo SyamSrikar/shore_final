@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital@1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 * {
   margin: 0;
@@ -13,13 +13,129 @@
   background-color: #020710;
 }
 
-html, body{
+html,body{
   height: 100%;
   width: 100%;
   background-color: #020710;
   overflow-x: hidden;
 }
 
+
+.Main
+{
+  height: 100vh;
+}
+.Hero
+{
+  width: 100%;
+  height: 100vh;
+  transition: 0.5s;
+  position: relative;
+}
+
+.bgvideo
+{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
+.about-heading{
+  position: relative;
+  top: 23px;
+  left: 23px;
+  background-color: white;
+  padding:10px;
+  z-index: 11;
+  width: 400px;
+  height: 70px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 40px;
+}
+
+.about-heading p{
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.video-container{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 10;
+}
+
+
+.model {
+  position: relative;
+  top: 20%;
+  left: 4%;
+  z-index: 1050;
+  width: 45%;
+  overflow: hidden;
+  outline: 0;
+  padding: 65px;
+}
+.model-mobile {
+  position: relative;
+  top: 0%;
+  z-index: 1050;
+  overflow: hidden;
+  outline: 0;
+  padding: 80px 30px;
+  height: 100vh;
+}
+
+.model-heading{
+  position: relative;
+    top: -25px;
+    z-index: 1050;
+    overflow: hidden;
+    outline: 0;
+    font-size: 55px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+.model-heading-mobile{
+  position: relative;
+    z-index: 1050;
+    overflow: hidden;
+    outline: 0;
+    font-size: 53px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 55px;
+}
+.model-desc{
+  color: #e9e9e9;
+    font-size: 21px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .model {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: #02071052;  
+  }
+  .model-mobile {
+    -webkit-backdrop-filter: blur(13px);
+    backdrop-filter: blur(8px);
+    background-color: #0207108f;  
+  }
+}
 .question{
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -33,19 +149,24 @@ html, body{
 
 .heading{
   text-align: center;
-  justify-content: center;
+  justify-content: left;
   font-size:50px;
   color:white;
-  font-family: 'Sofia Sans Semi Condensed', sans-serif;
-  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
+
+.heading .faq{
+  justify-content: right;
+}
+
 .footer-heading{
   text-align: center;
   justify-content: center;
-  font-size:30px;
+  font-size:25px;
   color:white;
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-weight: 100;
 }
 .footer-link{
   color:white;

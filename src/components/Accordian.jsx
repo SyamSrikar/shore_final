@@ -18,7 +18,7 @@ const Accordian = (props)=> {
     width={'100%'}
     >
         <Flex
-            padding={'10px'}
+            padding={'10px 1px'}
             fontSize={'20px'}   
             cursor={'pointer'} onClick={() => setIsOpen(!isOpen)}  alignItems={'center'} justifyContent={'space-between'}>
             <Flex color={'white'} flexWrap={'wrap'}><p className='question'>{props.question}</p></Flex>
