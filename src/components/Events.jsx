@@ -3,7 +3,7 @@ import '../events.css';
 import {Flex} from '@chakra-ui/react';
 import { useState } from 'react';
 import EventsCarousel from './EventsCarousel';
-import EventsGallery from './EventsGallery';
+
 import { propTypes } from 'react-grid-carousel';
 
 
@@ -66,7 +66,7 @@ const eventListMajor = [
     },
     {
       name: "Rang (Mural Wall Art)",
-      desc: "Mural painting is inherently different from all other forms of pictorial art in that it is organically connected with architecture. The use of color, design, and thematic treatment can radically alter the sensation of spatial proportions of the building. In this sense, mural is the only form of painting that is truly three-dimensional, since it modifies and partakes of a given space. To sum up, Rang will be an excellent opportunity to showcase and utilize the talent and resources at hand innovatively. In this competition the participants will be expected to paint a given wall section artistically in the given time period according to the theme chosen by them.",
+      desc: "Mural painting is inherently different from all other forms of pictorial art in that it is organically connected with architecture. In this sense, mural is the only form of painting that is truly three-dimensional, since it modifies and partakes of a given space. To sum up, Rang will be an excellent opportunity to showcase and utilize the talent and resources at hand innovatively. In this competition the participants will be expected to paint a given wall section artistically in the given time period according to the theme chosen by them.",
       date: "26, 27,28 Jan 2023",
       time: "1300 to 1600hrs",
       venue: "Mother Teresa Auditorium",
@@ -158,14 +158,14 @@ const Events=(props)=> {
  const [tab,setTab]=useState(true)
   return (
     <>
-        <Flex flexDir={'column'} paddingX={props.value?'0px':'50px'} marginTop={'40px'} width={'100%'}  > 
+        <Flex flexDir={'column'} paddingX={props.value?'0px':'50px'} marginTop={'40px'} width={'100%'} height={props.value && '100vh'} > 
             <Flex margin={'10px 0px'} justifyContent={'center'} width={'100%'} className='heading'><p>EVENTS</p></Flex>
-            <Flex justifyContent={'flex-start'} marginTop={props.value?'15px':'20px'} position={'relative'}  width={'240px'} cursor={'pointer'} marginLeft={'40px'}>
+            <Flex justifyContent={'flex-start'}  marginTop={props.value?'15px':'20px'} position={'relative'}  width={'240px'} cursor={'pointer'}>
                 <div className={tab?'tab tabselect':'tab'} onClick={()=>setTab(!tab)} >Major Events</div>
                 <div className={tab?'tab':'tab tabselect'} onClick={()=>setTab(!tab)}>Minor Events</div>
             </Flex>
             <Flex >   
-              <div width={"100%"} >
+              <div className={'carousel-div'} height={props.value && '800px'}>
                 {tab&&<EventsCarousel value={eventListMajor} device={props.value}/>}
                  {!tab && <EventsCarousel value={eventListMinor} device={props.value}/>}
                 </div>

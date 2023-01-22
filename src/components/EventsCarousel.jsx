@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from 'react-grid-carousel'
-import EventsGallery from './EventsGallery'
+
 import { Flex, Image } from '@chakra-ui/react'
 import {
   Tag,
@@ -21,20 +21,20 @@ const responsive=[
       autoplay: 1000,
       hideArrow:false,
       showDots:true,
-      scrollSnap:false,
-      gap:0,
+      scrollSnap:true,
+      gap:20,
     }
   ]
  
 const EventsCarousel = (props) => {
   return (
-    <Carousel cols={2} rows={1} gap={0} scrollSnap={false} responsiveLayout={responsive} loop  showDots={true} autoplay={3000} >
+    <Carousel cols={2} rows={1} gap={0} scrollSnap={true} responsiveLayout={responsive} loop  showDots={true} autoplay={3000} >
     {props.value.map((c,i)=>(
         <Carousel.Item key={i}>
-            <Flex flexDir={'column'} maxWidth={props.device?'100vw':'650px'} flexWrap={'wrap'} marginLeft={props.device?'0px':'20px'}>
-            <Image src={c.img} width={'100%'} height={props.device?'200px':'300px'}></Image>
+            <Flex flexDir={'column'} maxWidth={props.device?'100vw': '650px'} height={props.device && '650px'} flexWrap={'wrap'} marginLeft={props.device?'0px':'20px'} marginBottom={'15px'}>
+            <Image src={c.img}   height={props.device?'200px':'300px'}></Image>
             <Flex flexWrap={'wrap'} padding={'5px'} className={'events-name'}><p> {c.name}</p></Flex>
-            <Flex   flexWrap={'wrap'} padding={'5px'} height={'168px'}><p>{c.desc}</p></Flex>
+            <Flex   flexWrap={'wrap'} padding={'5px'} height={!props.device && '175px'}><p>{c.desc}</p></Flex>
             <Flex   flexWrap={'wrap'} padding={'5px'} color={'white'} flexDir={'column'}>
                 <Flex>
                     <Tag size={'lg'} key={'0'} variant='subtle' colorScheme='white'>
