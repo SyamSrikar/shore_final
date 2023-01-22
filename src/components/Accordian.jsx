@@ -17,7 +17,7 @@ const Accordian = (props)=> {
     borderColor={'#505050'}
     width={'100%'}
     >
-        <Flex
+        <Flex marginTop={props.value?'-20px':'0px'}
             padding={'10px 1px'}
             fontSize={'20px'}   
             cursor={'pointer'} onClick={() => setIsOpen(!isOpen)}  alignItems={'center'} justifyContent={'space-between'}>

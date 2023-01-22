@@ -3,7 +3,7 @@ import {Flex} from '@chakra-ui/react';
 import '../App.css';
 
 const Footer = (props) => {
-  const link_style={justifyContent:'space-between' ,marginTop:'30px' ,alignItems:'center',fontSize:'25px',cursor:'pointer' ,width:'155px'};
+  const link_style={justifyContent:'space-between' ,marginTop:'17px' ,alignItems:'center',fontSize:'25px',cursor:'pointer' ,width:'155px'};
   return (
     <Flex backgroundColor={'#020710'} padding={'40px'} paddingTop={'0px'} color={'white'} flexWrap={'wrap'} justifyContent={'space-around'}> 
         {!props.value && <Flex height={'250px'} marginBottom={props.value?'50px':'20px'}> <img src='../images/logo.png' alt='LOGO'></img> </Flex>}
@@ -33,6 +33,10 @@ const Footer = (props) => {
                 <Flex style={link_style} onClick={()=>window.location.href = "https://www.linkedin.com/company/shore-gitam-deemed-to-be-university/"}>
                   <img src='../images/linkedin.png' width={'35px'} height={'35px'}></img>
                   <p className='footer-link'>LinkedIn</p>
+                </Flex>
+                <Flex style={link_style} onClick={()=>window.location.href = "https://www.snapchat.com/add/shore.gitam?share_id=4NQqf4oGTgy7i8JkEVCrYw&locale=en_IN&sid=489faf2175d04d3d9092db22048b16f9"}>
+                  <img src='../images/snapchat.png' width={'35px'} height={'35px'}></img>
+                  <p className='footer-link'>Snapchat</p>
                 </Flex>
              </Flex>
         </Flex>

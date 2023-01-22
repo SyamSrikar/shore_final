@@ -18,39 +18,40 @@ const responsive=[
       cols: 1,
       rows: 1,
       loop: true,
-      autoplay: 1000,
+      autoplay: false,
       hideArrow:false,
       showDots:true,
       scrollSnap:true,
       gap:20,
+      dotColorActive:'#3C79F5',
     }
   ]
  
 const EventsCarousel = (props) => {
   return (
-    <Carousel cols={2} rows={1} gap={0} scrollSnap={true} responsiveLayout={responsive} loop  showDots={true} autoplay={3000} >
+    <Carousel cols={2} dotColorActive={'#3C79F5'} rows={1} gap={0} scrollSnap={true} responsiveLayout={responsive} loop={true}  showDots={true} autoplay={true} >
     {props.value.map((c,i)=>(
         <Carousel.Item key={i}>
-            <Flex flexDir={'column'} maxWidth={props.device?'100vw': '650px'} height={props.device && '650px'} flexWrap={'wrap'} marginLeft={props.device?'0px':'20px'} marginBottom={'15px'}>
-            <Image src={c.img}   height={props.device?'200px':'300px'}></Image>
-            <Flex flexWrap={'wrap'} padding={'5px'} className={'events-name'}><p> {c.name}</p></Flex>
-            <Flex   flexWrap={'wrap'} padding={'5px'} height={!props.device && '175px'}><p>{c.desc}</p></Flex>
-            <Flex   flexWrap={'wrap'} padding={'5px'} color={'white'} flexDir={'column'}>
-                <Flex>
+            <Flex flexDir={'column'} maxWidth={props.device?'100vw': '650px'}  flexWrap={'wrap'} marginLeft={props.device?'0px':'15px'} marginBottom={props.device?'0px':'15px'}>
+            <Image src={c.img}  alt={'Image not found'} height={props.device?'200px':'300px'}></Image>
+            <Flex flexWrap={'wrap'} padding={'5px'} className={'events-name'} ><p> {c.name}</p></Flex>
+            <Flex   flexWrap={'wrap'} padding={'5px'} marginBottom={'10px'}><p>{c.desc}</p></Flex>
+            <Flex    padding={'5px'} color={'white'} flexDir={'column'} >
+                <Flex >
                     <Tag size={'lg'} key={'0'} variant='subtle' colorScheme='white'>
-                        <TagLeftIcon boxSize='12px' as={MdOutlineDateRange} />
+                        <TagLeftIcon boxSize='18px' as={MdOutlineDateRange} />
                         <TagLabel>{c.date}</TagLabel>
                     </Tag>
                 </Flex>
                 <Flex>
                     <Tag size={'lg'} key={'1'} variant='subtle' colorScheme='white'>
-                        <TagLeftIcon boxSize='12px' as={IoTimeOutline} />
+                        <TagLeftIcon boxSize='18px' as={IoTimeOutline} />
                         <TagLabel>{c.time}</TagLabel>
                     </Tag>
                 </Flex>
                 <Flex>
                     <Tag size={'lg'} key={'2'} variant='subtle' colorScheme='white'>
-                        <TagLeftIcon boxSize='12px' as={GiTheater} />
+                        <TagLeftIcon boxSize='16px' as={GiTheater} />
                         <TagLabel>{c.venue}</TagLabel>
                     </Tag>
                 </Flex>
