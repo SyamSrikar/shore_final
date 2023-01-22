@@ -14,23 +14,24 @@ import { MdOutlineDateRange} from "react-icons/md";
 
 const responsive=[
     {
-      breakpoint: 900,
+      breakpoint: 767,
       cols: 1,
       rows: 1,
       loop: true,
       autoplay: 1000,
       hideArrow:false,
       showDots:true,
+      scrollSnap:false,
       gap:0,
     }
   ]
  
 const EventsCarousel = (props) => {
   return (
-    <Carousel cols={2} rows={1} gap={0} scrollSnap={true} responsiveLayout={responsive} loop  showDots={true} autoplay={3000} >
+    <Carousel cols={2} rows={1} gap={0} scrollSnap={false} responsiveLayout={responsive} loop  showDots={true} autoplay={3000} >
     {props.value.map((c,i)=>(
         <Carousel.Item key={i}>
-            <Flex flexDir={'column'} maxWidth={props.device?'400px':'650px'} flexWrap={'wrap'} marginLeft={props.device?'0px':'20px'}>
+            <Flex flexDir={'column'} maxWidth={props.device?'100vw':'650px'} flexWrap={'wrap'} marginLeft={props.device?'0px':'20px'}>
             <Image src={c.img} width={'100%'} height={props.device?'200px':'300px'}></Image>
             <Flex flexWrap={'wrap'} padding={'5px'} className={'events-name'}><p> {c.name}</p></Flex>
             <Flex   flexWrap={'wrap'} padding={'5px'} height={'168px'}><p>{c.desc}</p></Flex>
