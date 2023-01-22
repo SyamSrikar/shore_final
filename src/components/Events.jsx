@@ -200,10 +200,15 @@ const Events=(props)=> {
                 <div className={tab==='tab2'?'tab tabselect':'tab'} onClick={()=>setTab('tab2')}>Minor Events</div>
             </Flex>
             <Flex >   
-              <div className={tab==='tab2'?'carousel-div2':'carousel-div'} >
+              {!props.value && <div className={tab==='tab2'?'carousel-div2':'carousel-div'} >
                 {tab==='tab1'&&<EventsCarousel value={eventListMajor}  device={props.value}/>}
                  {tab==='tab2'&& <EventsCarousel value={eventListMinor} device={props.value}/>}
-                </div>
+                </div>}
+                {props.value && <div className={tab==='tab2'?'carousel-div3':'carousel-div'} >
+                {tab==='tab1'&&<EventsCarousel value={eventListMajor}  device={props.value}/>}
+                 {tab==='tab2'&& <EventsCarousel value={eventListMinor} device={props.value}/>}
+                </div>}
+
             </Flex>
         </Flex>
     </>
