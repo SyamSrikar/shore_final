@@ -18,7 +18,7 @@ const responsive=[
       cols: 1,
       rows: 1,
       loop: true,
-      autoplay: false,
+      autoplay: 2000,
       hideArrow:false,
       showDots:true,
       scrollSnap:true,
@@ -29,10 +29,10 @@ const responsive=[
  
 const EventsCarousel = (props) => {
   return (
-    <Carousel cols={2} dotColorActive={'#3C79F5'} rows={1} gap={0} scrollSnap={true} responsiveLayout={responsive} loop={true}  showDots={true} autoplay={true} >
+    <Carousel cols={3} dotColorActive={'#3C79F5'} rows={1} gap={0} scrollSnap={true} responsiveLayout={responsive} loop={true}  showDots={true} autoplay={false} >
     {props.value.map((c,i)=>(
         <Carousel.Item key={i}>
-            <Flex flexDir={'column'} maxWidth={props.device?'100vw': '650px'}  flexWrap={'wrap'} marginLeft={props.device?'0px':'15px'} marginBottom={props.device?'0px':'15px'}>
+            <Flex flexDir={'column'} maxWidth={props.device?'100vw': '445px'}  flexWrap={'wrap'} marginLeft={props.device?'0px':'15px'} marginBottom={props.device?'0px':'15px'}>
             <Image src={c.img}  alt={'Image not found'} height={props.device?'200px':'300px'}></Image>
             <Flex flexWrap={'wrap'} padding={'5px'} className={'events-name'} ><p> {c.name}</p></Flex>
             <Flex   flexWrap={'wrap'} padding={'5px'} marginBottom={'10px'}><p>{c.desc}</p></Flex>

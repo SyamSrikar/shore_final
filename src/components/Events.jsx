@@ -3,8 +3,8 @@ import '../events.css';
 import {Flex} from '@chakra-ui/react';
 import { useState } from 'react';
 import EventsCarousel from './EventsCarousel';
-
-import { propTypes } from 'react-grid-carousel';
+import { GoTriangleDown } from "react-icons/go";
+import { width } from '@mui/system';
 
 
 const eventListMajor = [
@@ -190,23 +190,55 @@ const eventListMajor = [
 
 const Events=(props)=> {
 
- const [tab,setTab]=useState('tab1')
+ const [tab,setTab]=useState('tab1');
+ const [type,setType]=useState('major');
+ const [open,setopen]=useState(true)
   return (
     <>
         <Flex flexDir={'column'} paddingX={props.value?'0px':'50px'} marginTop={props.value?'0px':'40px'} width={'100%'}  > 
             <Flex margin={props.value?'10px':'10px 0px 10px 0px'} justifyContent={'center'} width={'100%'} className='heading'><p>EVENTS</p></Flex>
-            <Flex justifyContent={'flex-start'}  marginTop={props.value?'6px':'20px'} position={'relative'}  width={'300px'} cursor={'pointer'}>
-                <div className={tab==='tab1'?'tab tabselect':'tab'} onClick={()=>setTab('tab1')} >Major Events</div>
-                <div className={tab==='tab2'?'tab tabselect':'tab'} onClick={()=>setTab('tab2')}>Minor Events</div>
+            <Flex justifyContent={'flex-start'}  marginTop={props.value?'6px':'20px'} position={'relative'}  width={'420px'} cursor={'pointer'} marginLeft={props.value?'11px':'39px'}>
+                <div className={tab==='tab1'?'tab tabselect':'tab'} onClick={()=>{setTab('tab1');setopen(true);setType('major')}} >Culturals</div>
+                <div className={tab==='tab2'?'tab tabselect':'tab'} onClick={()=>{setTab('tab2');setopen(true);setType('major')}}>Sports</div>
+                <div className={tab==='tab3'?'tab tabselect':'tab'} onClick={()=>{setTab('tab3');setopen(false);}}>Pro Nights</div>
             </Flex>
+            {tab==='tab1' && 
+            <Flex position={'relative'} flexDir={'column'} overflow={open?'auto':'hidden'} height={open?'70px':'0px'} transition={'height 0.5s'} transitionTimingFunction={'ease'} marginTop={'-10px'} marginLeft={!props.value?(tab==='tab1'?'35px':'140px'):(tab==='tab1'?'6px':'116px')}>
+              <Flex position={'relative'}>  
+                <GoTriangleDown color='white' size={'30px'}/>
+              </Flex>
+              <Flex position={'relative'} cursor={'pointer'}>
+                <div className={type==='major'?'type typeselect':'type'} onClick={()=>setType('major')} >Major Events</div>
+                <div className={type==='minor'?'type typeselect':'type'} onClick={()=>setType('minor')}>Minor Events</div>
+              </Flex>
+            </Flex>}
+
+            {tab==='tab2' && 
+            <Flex position={'relative'} flexDir={'column'} overflow={open?'auto':'hidden'} height={open?'70px':'0px'} transition={'height 0.5s'} transitionTimingFunction={'ease'} marginTop={'-10px'} marginLeft={!props.value?(tab==='tab1'?'35px':'145px'):(tab==='tab1'?'6px':'116px')}>
+              <Flex position={'relative'}>  
+                <GoTriangleDown color='white' size={'30px'}/>
+              </Flex>
+              <Flex position={'relative'} cursor={'pointer'}>
+                <div className={type==='major'?'type typeselect':'type'} onClick={()=>setType('major')} >General</div>
+                <div className={type==='minor'?'type typeselect':'type'} onClick={()=>setType('minor')}>Recrational</div>
+              </Flex>
+            </Flex>}
             <Flex >   
-              {!props.value && <div className={tab==='tab2'?'carousel-div2':'carousel-div'} >
-                {tab==='tab1'&&<EventsCarousel value={eventListMajor}  device={props.value}/>}
-                 {tab==='tab2'&& <EventsCarousel value={eventListMinor} device={props.value}/>}
+
+              
+              {!props.value &&  <div className={((tab==='tab1' && type==='minor')||(tab==='tab2'))?'carousel-div2':'carousel-div'} > 
+                {tab==='tab1' && type==='major' && <EventsCarousel value={eventListMajor}  device={props.value}/>}
+                {tab==='tab1' && type==='minor' && <EventsCarousel value={eventListMinor}  device={props.value}/>}
+                 {tab==='tab2'&& type==='major' &&<EventsCarousel value={eventListMajor} device={props.value}/>}
+                 {tab==='tab2'&& type==='minor' && <EventsCarousel value={eventListMinor} device={props.value}/>}
+                 {tab==='tab3'&& <EventsCarousel value={eventListMajor} device={props.value}/>}
                 </div>}
-                {props.value && <div className={tab==='tab2'?'carousel-div3':'carousel-div'} >
-                {tab==='tab1'&&<EventsCarousel value={eventListMajor}  device={props.value}/>}
-                 {tab==='tab2'&& <EventsCarousel value={eventListMinor} device={props.value}/>}
+                {props.value && <div className={((tab==='tab1' && type==='minor')||(tab==='tab2'))?'carousel-div2':'carousel-div'} >
+                {tab==='tab1'&& type==='major' && <EventsCarousel value={eventListMajor}  device={props.value}/>}
+                 {tab==='tab1'&& type==='minor' && <EventsCarousel value={eventListMinor} device={props.value}/>}
+                 {tab==='tab2'&& type==='major' &&<EventsCarousel value={eventListMajor} device={props.value}/>}
+                 {tab==='tab2'&& type==='minor' && <EventsCarousel value={eventListMinor} device={props.value}/>}
+                 {tab==='tab3'&& <EventsCarousel value={eventListMajor} device={props.value}/>}
                 </div>}
 
             </Flex>

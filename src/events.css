@@ -17,19 +17,13 @@
 
 .carousel-div{
     width: 100vw;
-    border: 2px solid white;
     border-radius: 10px;
     border-top-left-radius: 0px;
     margin-bottom: 10px;
+    margin-top: 12px;
 }
 .carousel-div2{
-    width: 90vw;
-    border: 2px solid white;
-    border-radius: 10px;
-}
-.carousel-div3{
-    width: 100vw;
-    border: 2px solid white;
+    width: 92.5vw;
     border-radius: 10px;
 }
 
@@ -37,9 +31,9 @@
     font-size: 20px;
     font-weight: 700;
 }
-.tab{
-    padding: 10px;
-    width: 300px;
+.tab,.type{
+    padding: 5px 2px 5px 2px;
+    width: 110px;
     border: 2px blueviolet;
     background-color: #020710;
     color: white;
@@ -51,7 +45,11 @@
 
 }
 
-.tabselect{
+.tabselect,.typeselect{
     background-color: #F9F9F9;
     color: black;
+}
+
+.type{
+    width: 130px;
 }
