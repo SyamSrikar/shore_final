@@ -4,7 +4,6 @@ import {Flex} from '@chakra-ui/react';
 import { useState } from 'react';
 import EventsCarousel from './EventsCarousel';
 import { GoTriangleDown } from "react-icons/go";
-import { width } from '@mui/system';
 
 
 const eventListMajor = [
@@ -203,7 +202,7 @@ const Events=(props)=> {
                 <div className={tab==='tab3'?'tab tabselect':'tab'} onClick={()=>{setTab('tab3');setopen(false);}}>Pro Nights</div>
             </Flex>
             {tab==='tab1' && 
-            <Flex position={'relative'} flexDir={'column'} overflow={open?'auto':'hidden'} height={open?'70px':'0px'} transition={'height 0.5s'} transitionTimingFunction={'ease'} marginTop={'-10px'} marginLeft={!props.value?(tab==='tab1'?'35px':'140px'):(tab==='tab1'?'6px':'116px')}>
+            <Flex position={'relative'} flexDir={'column'} overflow={open?'auto':'hidden'} height={open?'70px':'0px'} transition={'height 1s'} transitionTimingFunction={'ease'}  marginLeft={!props.value?(tab==='tab1'?'35px':'140px'):(tab==='tab1'?'6px':'116px')}>
               <Flex position={'relative'}>  
                 <GoTriangleDown color='white' size={'30px'}/>
               </Flex>
@@ -214,7 +213,7 @@ const Events=(props)=> {
             </Flex>}
 
             {tab==='tab2' && 
-            <Flex position={'relative'} flexDir={'column'} overflow={open?'auto':'hidden'} height={open?'70px':'0px'} transition={'height 0.5s'} transitionTimingFunction={'ease'} marginTop={'-10px'} marginLeft={!props.value?(tab==='tab1'?'35px':'145px'):(tab==='tab1'?'6px':'116px')}>
+            <Flex position={'relative'} flexDir={'column'} overflow={open?'auto':'hidden'} height={open?'70px':'0px'} transition={'height 0.5s'} transitionTimingFunction={'ease'}  marginLeft={!props.value?(tab==='tab1'?'35px':'145px'):(tab==='tab1'?'6px':'116px')}>
               <Flex position={'relative'}>  
                 <GoTriangleDown color='white' size={'30px'}/>
               </Flex>

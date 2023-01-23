@@ -30,8 +30,8 @@ const About=(props)=> {
   });
   
   return (
-    <div class="video-container">
-        <video className='video' loop="true" autoplay="autoplay" muted={position?'false':'true'} >
+    <div className="video-container">
+        <video className='video' loop="true" autoPlay="autoplay" muted={position?'false':'true'} >
             <source src="./about.mp4" type="video/mp4"/>
         </video>
         

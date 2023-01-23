@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import Events from './components/Events';
 import Home from './components/Home';
 import About from './components/About';
+import Store from './components/Store';
 
 function App() {
 
@@ -36,6 +37,7 @@ useEffect(() => {
       <About value={isMobile}/>
       <Themes value={isMobile}/>
       <Events value={isMobile}/>
+      <Store/>
       <Faq value={isMobile} state={setClick}/>
       <Footer value={isMobile}/>
     </ChakraProvider>
