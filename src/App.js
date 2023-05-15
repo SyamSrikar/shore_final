@@ -10,6 +10,9 @@ import Events from './components/Events';
 import Home from './components/Home';
 import About from './components/About';
 import Store from './components/Store';
+import MeetTeam from './components/MeetTeam';
+import Sponsers from './components/Sponsers';
+import Leaderboard from './components/Leaderboard';
 
 function App() {
 
@@ -27,22 +30,24 @@ function App() {
   }, []);
 const [isMobile,setIsMobile]=useState(false)
 useEffect(() => {
-  setIsMobile(width<=768);
+  setIsMobile(width<=820);
 }, [width])
 
   return (
-    !click ?<>
+  !click ?<>
       <ChakraProvider>
       <Home/>
       <About value={isMobile}/>
       <Themes value={isMobile}/>
+      <Sponsers value={isMobile}/>
       <Events value={isMobile}/>
-      <Store/>
+      <Leaderboard value={isMobile}/>
+      <Store value={isMobile}/>
+      <MeetTeam value={isMobile} state={setClick}/>
       <Faq value={isMobile} state={setClick}/>
       <Footer value={isMobile}/>
     </ChakraProvider>
     </>:<Navigation value={isMobile} state={setClick}/>
-    
   );
 }
 

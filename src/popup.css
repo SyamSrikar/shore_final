@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
+
+.title{
+    font-family: 'Unbounded', cursive;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.match-name{
+    font-family: 'Unbounded', cursive;
+    font-weight: 590;
+    font-size: 22px;
+}
+.match-desc{
+    font-family: 'Unbounded', cursive;
+    font-weight: 590;
+    font-size: 14.5px;
+}
+
+.title-mobile{
+    font-family: 'Unbounded', cursive;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.match-name-mobile{
+    font-family: 'Unbounded', cursive;
+    font-weight: 590;
+    font-size: 19px;
+}
+.match-desc-mobile{
+    font-family: 'Unbounded', cursive;
+    font-weight: 590;
+    font-size: 12px;
+}

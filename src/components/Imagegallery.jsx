@@ -8,7 +8,7 @@ const Imagegallery=(props)=> {
     
         <div className='profile_detail'>
             <div class="wrapper">
-              <div><img src={props.value.image} alt={'image'}></img></div>
+              <div><img src={process.env.PUBLIC_URL + props.value.image} alt={'image'}></img></div>
               <div class="bg"></div>
             </div>  
             <div><p className='name'>{props.value.name}</p></div>

@@ -26,7 +26,7 @@ const Accordian = (props)=> {
                 {isOpen?<HiOutlineMinusCircle color={'white'} size={'25px'}/>:<IoAddCircleOutline color={'white'} size={'25px'}/>}
             </Flex>
         </Flex>
-        <Flex fontSize={'17px'} height={isOpen?'inherit':0} paddingX={'30px'} overflow={isOpen?'auto':'hidden'} color={'#FAFAFA'} borderColor={isOpen?'white':'None'}>
+        <Flex fontSize={'20px'} fontWeight={'700'} height={isOpen?'inherit':0} paddingX={'30px'} overflow={isOpen?'auto':'hidden'} color={'#FAFAFA'} borderColor={isOpen?'white':'None'}>
             <p className='answer'>{props.answer}</p>
         </Flex>
     </Flex>);

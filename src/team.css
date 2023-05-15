@@ -198,11 +198,12 @@ p{
 
 .check{
   display: block;
-  position: absolute;
+  position: fixed;
   left: 7%;
   top:3%;
   cursor: pointer;
   size: 15px;
+  z-index: 200;
 }
 
 .navigation-links-mobile a{
@@ -256,4 +257,8 @@ p{
 .name{
   font-size: 20px;
   font-weight: 600;
+}
+
+.profile-shore{
+  margin-top: 15%;
 }

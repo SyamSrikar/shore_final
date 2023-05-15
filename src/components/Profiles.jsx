@@ -7,10 +7,10 @@ const Profiles=(props)=> {
   return (
         <>  
             {props.valueParent.heads.length>0 && <div>
-            <div className='heading_title'><p>Heads</p></div>
-            <div className='profile_section'>
+            <div className='heading_title'>{props.valueParent.heading!=='Shore' && <p>Heads</p>}</div>
+            <div className={props.valueParent.heading==='Shore'?'profile_section profile-shore':'profile_section'} >
                 {props.valueParent.heads.map((val,k) =>
-                    <Imagegallery value={val}/> 
+                    <Imagegallery  value={val}/> 
                 )}
             </div></div>}
             
